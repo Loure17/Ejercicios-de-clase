@@ -1,0 +1,86 @@
+.navbar {
+    background-color: #2b4e84;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    position: sticky;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1px;
+}
+
+header {
+    background-color: #3e65a0;
+    width: 100%;
+    height: 67px;
+}
+
+body {
+    background-color: #e8f0fb;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+}
+
+#recuadro {
+    background-color: #ffffff;
+    width: 500px;
+    height: 450px;
+    padding: 35px;
+    box-shadow: 0 4px 15px rgb(163, 160, 160);
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+#vivas {
+    width: 500px;
+    height: auto;
+}
+
+input {
+    width: 180px;
+    height: 35px;
+    font-size: medium;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#input1 {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#input2 {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+#acceder {
+    background-color: #3e65a0;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 100px;
+    height: 45px;
+    color: white;
+}
+
+#contrasenia{
+    color: #2b4e84;
+    margin-left: 10px;
+    margin-top: 15px;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+#contrasenia:hover{
+    text-decoration: underline;
+}

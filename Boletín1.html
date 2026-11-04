@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <style>
+        * {
+            font-size: 15px;
+        }
+
+        .columna-formulario {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fila-formulario {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        input {
+            margin-left: 5px;
+        }
+
+        input[type="radio"] {
+            margin-left: 10px;
+        }
+
+        .botones-contenedor img {
+            width: 20px;
+            height: auto;
+        }
+
+        fieldset {
+            margin-bottom: 15px;
+        }
+
+        .contenedor-label {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            margin-top: 10px !important;
+        }
+
+        #cajita {
+            width: 16px !important;
+            height: 16px !important;
+            display: inline-block !important;
+            margin-left: 0px !important;
+            margin-right: 8px !important;
+        }
+
+        .botones-contenedor {
+            margin-top: 10px;
+        }
+
+        #ropa{
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        #comentarios{
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <form action="/enviar-datos" method="post">
+
+        <h1><strong>Tipos de Input</strong></h1>
+
+
+        <div class="fila-formulario">
+            Usuario:
+            <input type="text" name="usuario" placeholder="nombre de usuario">
+        </div>
+
+        <div class="fila-formulario">
+            Contraseña
+            <input type="password" name="contrasena">
+        </div>
+
+        <div class="fila-formulario">
+            Mantener conectado
+            <input type="checkbox" name="mantener" checked>
+        </div>
+
+        <div class="fila-formulario">
+            Preferencias:
+            <input type="radio" name="preferencia" value="manana"> Mañana
+            <input type="radio" name="preferencia" value="tarde"> Tarde
+            <input type="radio" name="preferencia" value="noche"> Noche
+        </div>
+
+
+        <div class="fila-formulario">
+            Reservar:
+            <input type="radio" name="reserva_hotel" value="hotel"> Hotel
+            <input type="radio" name="reserva_coche" value="coche"> Coche
+        </div>
+
+
+        <div class="fila-formulario">
+            Ciudad
+            <input type="text" name="ciudad" value="Vigo" readonly>
+        </div>
+
+
+        <div class="fila-formulario">
+            Subir Fotografía:
+            <input type="file" name="fotografia">
+        </div>
+
+        <fieldset>
+            <legend>Tipo de cliente</legend>
+            <input type="radio" name="tipo" value="particular">Particular <br>
+            <input type="radio" name="tipo" value="asociacion">Asociación <br>
+            <input type="radio" name="tipo" value="empresa">Empresa <br>
+        </fieldset>
+
+        <div class="columna-formulario">
+            Información de interés <br>
+            Comentarios <br>
+            <textarea name="comentarios" id="comentarios" cols="60" rows="6">Escriba aquí sus comentarios...</textarea>
+            <label class="contenedor">
+                <input id="cajita" type="checkbox" checked>Acepto recibir información publicitaria
+            </label>
+        </div>
+
+        <select name="ropa" id="ropa">
+            <optgroup label="Camisas">
+                <option value="manga-larga" selected>Manga larga</option>
+                <option value="manga-corta">Manga corta</option>
+            </optgroup>
+            <optgroup label="Pantalones">
+                <option value="pitillo">Pantalón pitillo</option>
+                <option value="campana">Pantalón campana</option>
+                <option value="corto">Pantalón corto</option>
+            </optgroup>
+        </select>
+
+
+        <div class="botones-contenedor">
+            <button type="submit">
+                <img src="tick.png" alt="enviar">
+            </button>
+
+            <button type="reset">
+                <img src="papelera.png" alt="borrar">
+            </button>
+
+            <input type="button" value="Salir" onclick="window.close();">
+        </div>
+
+    </form>
+
+
+
+</body>
+
+</html>

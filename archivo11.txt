@@ -1,0 +1,7 @@
+Nº      3.   El factorial es:        6, Coseno: -1,137500
+Nº      8.   El factorial es:    40320, Coseno: -224,422222
+Nº      3.   El factorial es:        6, Coseno: -1,137500
+Nº      4.   El factorial es:       24, Coseno: -2,022222
+Nº      6.   El factorial es:      720, Coseno: -27,800000
+Nº      8.   El factorial es:    40320, Coseno: -224,422222
+Nº      1.   El factorial es:        1, Coseno: 0,540278

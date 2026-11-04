@@ -1,0 +1,67 @@
+/* Defino mis variables globales */
+:root {
+    --main-color: blue;
+}
+
+/* Selección del título principal usando la variable */
+h1 {
+    color: var(--main-color);
+}
+
+/* Selector universal: afecta a todos los elementos de la página */
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h4 {
+    color: brown;
+    /* Sobrescribe al selector universal (*) solo para el h4 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Selectores de enlaces dentro de párrafos */
+p a {
+    color: crimson;
+}
+
+p > a {
+    color: chocolate;
+}
+
+/* Enlaces generales de la página */
+a {
+    color: darkblue; /* Color legible en fondos claros */
+    text-decoration: none; /* Quita el subrayado predeterminado */
+}
+
+/* Definimos nuestras clases en CSS */
+.parrafo1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cursiva {
+    font-style: italic; /* Añadido para que la clase realmente aplique cursiva */
+}
+
+/* Nueva clase que hace que el enlace ocupe toda la línea y empuje la imagen abajo */
+.enlace-bloque {
+    display: block;
+    margin-bottom: 20px; /* Deja un espacio de separación con la imagen */
+}
+
+/* Defino identificación */
+#nosubrayar {
+    text-decoration: underline;
+}
+
+/* Estilos de la imagen */
+img {
+    width: 500px;
+    height: 200px;
+    object-fit: cover; /* Evita que la foto del coche se deforme o estire al cambiar el tamaño */
+}
+.caja-color{
+    background-color: blueviolet;
+    padding: 0px;          
+    margin-top: 0px; 
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            margin-bottom: 50px;
+        }
+
+        #legend1 {
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+        }
+
+        #datosLegend {
+            margin-bottom: 25px;
+        }
+
+        input {
+            margin-left: 5px;
+        }
+
+        .campo-izquierda {
+            float: left;
+            width: 65%;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .campo-derecha {
+            float: right;
+            width: 30%;
+        }
+
+        #pedidos {
+            display: block;
+            padding-top: 30px;
+            clear: both;
+        }
+
+        p {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        #caixa {
+            float: left;
+            width: 48%;
+
+            margin-left: 0;
+            padding-left: 0;
+            height: 240px;
+        }
+
+
+        #campodeladerecha {
+            float: right;
+            width: 48%;
+
+            height: 240px;
+        }
+
+        #lacajadeabajo {
+            display: block;
+            padding-top: 10px;
+            clear: both;
+            float: left;
+            width: 48%;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+
+        #lacajadeabajoaladerecha {
+            float: right;
+            width: 48%;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+
+        .seccion-botones {
+            clear: both;
+            padding-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 560px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1><strong>Modas Paquita</strong></h1>
+
+    <form action="#" method="POST">
+        <fieldset>
+            <legend id="legend1">
+                <h1><strong>Formulario de Pedidido</strong></h1>
+            </legend>
+            <h3><strong>Paso1. Datos personales</strong></h3>
+
+            <div id="caja1">
+                <fieldset class="campo-izquierda">
+                    <legend id="datosLegend">Datos del cliente</legend>
+                    Correo electrónico<input type="text"> <br><br>
+                    Contraseña <input type="password" minlength="6"> <br>
+                    (Longitud mínima 6 caracteres)
+                </fieldset>
+
+                <fieldset class="campo-derecha">
+                    <legend>Tipo de cliente</legend>
+                    <input type="radio" name="opcion" checked>Particular <br>
+                    <input type="radio" name="opcion">Asociación <br>
+                    <input type="radio" name="opcion">Empresa
+                </fieldset>
+            </div>
+
+            <h3 id="pedidos"><strong>Paso2. Pedido</strong></h3>
+
+            <fieldset id="caixa">
+                <legend>Datos del producto</legend>
+                <p>Producto</p>
+
+
+                <select name="ropa" id="ropa">
+                    <optgroup label="Camisas">
+                        <option value="manga-larga" selected>Manga larga</option>
+                        <option value="manga-corta">Manga corta</option>
+                    </optgroup>
+                    <optgroup label="Pantalones">
+                        <option value="pitillo">Pantalón pitillo</option>
+                        <option value="campana">Pantalón campana</option>
+                        <option value="corto">Pantalón corto</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+
+
+            <fieldset id="campodeladerecha">
+                <legend>Información de interés</legend>
+                Comentarios <br>
+                <textarea name="comentarios" id="comentarios" rows="5">Escriba aquí sus comentarios...</textarea>
+                <br><br>
+                <label class="contenedor">
+                    <input id="cajita" type="checkbox" checked>Acepto recibir información publicitaria
+                </label>
+            </fieldset>
+
+            <fieldset id="lacajadeabajo">
+                <legend>Datos envío</legend>
+                Dirección <input type="text" style="width: 70%;"> <br><br>
+                Ciudad <input type="text" style="width: 30%;">
+                Código postal <input type="text" style="width: 20%;">
+            </fieldset>
+
+            <fieldset id="lacajadeabajoaladerecha">
+                <legend>Datos Bancarios</legend>
+                Nombre de la entidad <input type="text" style="width: 50%;"> <br><br>
+                Número de la cuenta <input type="text" style="width: 55%;">
+            </fieldset>
+
+
+            <div class="seccion-botones">
+                <button type="submit">Enviar pedido</button>
+                <button id="borrar" type="reset">Borrar formulario</button>
+            </div>
+
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
