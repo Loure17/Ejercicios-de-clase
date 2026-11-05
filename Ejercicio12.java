@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-public class Ejercicio12 {// TODO doc
+public class Ejercicio12 {
 
     /**
      * Da un resultado aleatorio del partido
@@ -9,7 +9,7 @@ public class Ejercicio12 {// TODO doc
      * @return devuelve el resultado del partido
      */
     public static String quiniela() {
-        // TODO Math.random()
+        
 
         int opcion = (int) (Math.random() * 3);
 

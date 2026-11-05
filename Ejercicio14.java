@@ -41,10 +41,12 @@ public class Ejercicio14 {
                 System.out.printf("HABEIS EMPATADO!! Ambos obtuvieron %d puntos.\n", puntosJugador);
             }
         }
+        juegos();
     }
 
     /**
-     * Hace la tirada de dos dados 
+     * Hace la tirada de dos dados
+     * @return devuelve la suma del dado1 + dado2
      */
     public static int tirada() {
         int dado1 = (int) (Math.random() * 6) + 1;
@@ -57,6 +59,8 @@ public class Ejercicio14 {
 
     /**
      * Comprueba el resultado de la suma según las reglas de Craps.
+     * @param suma dado1 + dado2
+     * @return devuelve la suma
      */
     public static int comprobacion(int suma) {
         if (suma == 7 || suma == 11) {
@@ -68,14 +72,80 @@ public class Ejercicio14 {
         }
     }
 
-    public static void juegos() {
-        int resultados;
-        int vez = 0;
-        while (vez <= 1000000) {
-        vez += 1;
-        resultados = tirada();
+    /**
+     * Versión de tirada() sin prints.
+     * @return suma de los dados
+     */
+    public static int tiradaSinPrints() {
+        int dado1 = (int) (Math.random() * 6) + 1;
+        int dado2 = (int) (Math.random() * 6) + 1;
+        return dado1 + dado2;
+    }
 
+    /**
+     * Calcula y da el porcentaje de victorias, derrotas y empates en un millón de juegos
+     * nuetrsa 
+     * 
+     *   porcentajeJugador % de victorias del jugador en 1000000 de partidas
+     *   porcentajeCPU % de victorias de la CPU en 1000000 de partidas
+     *   porcentajeEmpates % de empates en 1000000 de partidas
+     */
+    public static void juegos() {
+        int vez = 0;
+        int totalPartidas = 1000000;
+
+        int victoriasJugador = 0;
+        int victoriasCPU = 0;
+        int empates = 0;
+
+        while (vez < totalPartidas) {
+            vez += 1;
+
+            int sumaJugador = tiradaSinPrints();
+            int resultadoJugador = comprobacion(sumaJugador);
+
+            if (resultadoJugador == 0) {
+
+                victoriasJugador++;
+
+            } else if (resultadoJugador == -1) {
+
+                victoriasCPU++;
+
+            } else {
+
+                int puntosJugador = resultadoJugador;
+
+                int sumaCPU = tiradaSinPrints();
+                int resultadoCPU = comprobacion(sumaCPU);
+
+                if (resultadoCPU == 0) {
+
+                    victoriasCPU++;
+                } else if (resultadoCPU == -1) {
+
+                    victoriasJugador++;
+                } else {
+
+                    int puntosCPU = resultadoCPU;
+
+                    if (puntosJugador > puntosCPU) {
+                        victoriasJugador++;
+                    } else if (puntosCPU > puntosJugador) {
+                        victoriasCPU++;
+                    } else {
+                        empates++;
+                    }
+                }
+            }
         }
 
+        double porcentajeJugador = ((double) victoriasJugador / totalPartidas) * 100;
+        double porcentajeCPU = ((double) victoriasCPU / totalPartidas) * 100;
+        double porcentajeEmpates = ((double) empates / totalPartidas) * 100;
+
+        System.out.println("Porcentaje victorias del jugador: " + porcentajeJugador);
+        System.out.println("Porcentaje victorias CPU: " + porcentajeCPU);
+        System.out.println("Porcentaje empates: " + porcentajeEmpates);
     }
 }
