@@ -1,94 +1,110 @@
 public class Hundirlaflota {
 
-    /**
-     * Crea unas coordenadas random para el barco de la CPU
-     *
-     * @return devuelve las dos posiciones del barco
-     */
-    public static int[][] coordenadasCPU() {
+    public static int[] coordenadasCPU() {
 
         char[] columnas = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J' };
         int[] filas = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-        // COORDENADA RANDOM
-        // el .lenght indica la cantidad de elementos dentro del array
         int columnaAleatoria = (int) (Math.random() * columnas.length);
         int filaAleatoria = (int) (Math.random() * filas.length);
 
-        // DIRECCION RANDOM
-        // 1 = HORIZONTAL
-        // 2 = VERTICAL
+        int direccion = (int) (Math.random() * 4) + 1;
 
-        int direccion = (int) (Math.random() * 2) + 1;
+        int expansionColumna = columnaAleatoria;
+        int expansionFila = filaAleatoria;
 
-        // SEGUNDA COORDENADA
-
-        int segundaColumna = columnaAleatoria;
-        int segundaFila = filaAleatoria;
-
-        // SE EXPANDE EN HORIZONTAL
         if (direccion == 1) {
 
-            if (segundaColumna != 9) {
-                segundaColumna++;
+            if (columnaAleatoria != 9) {
+                expansionColumna += 1;
             } else {
-                segundaColumna--;
+                expansionColumna -= 1;
             }
 
-            // SE EXPANDE EN VERTICAL
         } else if (direccion == 2) {
 
-            if (segundaFila != 9) {
-                segundaFila++;
+            if (columnaAleatoria != 0) {
+                expansionColumna -= 1;
             } else {
-                segundaFila--;
+                expansionColumna += 1;
+            }
+
+        } else if (direccion == 3) {
+
+            if (filaAleatoria != 9) {
+                expansionFila += 1;
+            } else {
+                expansionFila -= 1;
+            }
+
+        } else if (direccion == 4) {
+
+            if (filaAleatoria != 0) {
+                expansionFila -= 1;
+            } else {
+                expansionFila += 1;
             }
         }
 
-        // GUARDAMOS LAS DOS COORDENADAS
-
-        int[][] resultado = {
-                { columnaAleatoria, filaAleatoria },
-                { segundaColumna, segundaFila }
-        };
+        int[] resultado = { columnaAleatoria, filaAleatoria, expansionColumna, expansionFila };
 
         return resultado;
     }
 
-    public static void main(String[] args) {
+    public static void dibujarTableroCPU(int[] coordenadas) {
 
-        char[] columnas = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J' };
+    char[] columnas = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J' };
 
-        int[][] coordenadas = coordenadasCPU();
+    // Imprimir cabecera de números (columnas)
+    System.out.print("   ");
 
-        // DIBUJAR TABLERO
+    for (int i = 1; i <= 10; i++) {
+        System.out.print(i + "  ");
+    }
 
-        System.out.print("    ");
+    System.out.println();
 
-        for (int i = 0; i < 10; i++) {
-            System.out.print(" " + (i + 1) + "  ");
+    // Imprimir las filas (letras)
+    for (int j = 0; j < columnas.length; j++) {
+
+        System.out.print(columnas[j] + "  ");
+
+        for (int columna = 0; columna < 10; columna++) {
+
+            if ((columna == coordenadas[0] && j == coordenadas[1])
+                    || (columna == coordenadas[2] && j == coordenadas[3])) {
+
+                System.out.print("[] ");
+
+            } else {
+
+                System.out.print(".  ");
+            }
         }
 
         System.out.println();
+    }
+}
 
-        for (int fila = 0; fila < 10; fila++) {
 
-            System.out.print(" " + columnas[fila] + "  ");
-
-            for (int columna = 0; columna < 10; columna++) {
-
-                if ((fila == coordenadas[0][0] && columna == coordenadas[0][1])
-                        || (fila == coordenadas[1][0] && columna == coordenadas[1][1])) {
-
-                    System.out.print(" [] ");
-
-                } else {
-                    System.out.print("  . ");
-                }
-            }
-
-            System.out.println();
-        }
+    public static void tableroUser() {
 
     }
+
+    public static void disparoCPU() {
+
+        char[] columnas = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J' };
+        int[] filas = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        int columnaAleatoria = (int) (Math.random() * columnas.length);
+        int filaAleatoria = (int) (Math.random() * filas.length);
+
+        int[] disparo = { columnaAleatoria, filaAleatoria };
+
+    }
+
+    public static void main(String[] args) {
+        dibujarTableroCPU(coordenadasCPU());
+    }
+
 }
