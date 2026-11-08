@@ -1,0 +1,138 @@
+* { box-sizing: border-box; }
+
+/* Todo se escala con la anchura de la ventana (1rem cambia con la pantalla) */
+html { font-size: clamp(14px, 1.05vw, 24px); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  background-color: #8a1fe0;
+  color: #000;
+}
+
+/* Encabezado */
+header {
+  background: url("cabecera_navidad.jpg") no-repeat center top / cover;
+  height: 5.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+header h1 {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 2.2rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* Menú */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+  padding: 0.6rem 0 0.8rem;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #ffd54f;
+  text-decoration: underline;
+}
+
+/* Cuerpo: ocupa todo el alto sobrante */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 3rem;
+}
+
+section {
+  width: 44%;
+  background-color: #b57bf0;
+  border-radius: 2.5rem;
+  padding: 1.2rem 1.5rem 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+caption {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.3rem 0 1.2rem;
+  text-align: center;
+}
+table { border-collapse: collapse; }
+td { padding: 0.15rem 0; vertical-align: top; }
+input[type="text"], input[type="email"], input[type="tel"] {
+  width: 11rem;
+  background-color: #e6d9b8;
+  border: 2px inset #555;
+  font-size: 0.8rem;
+  padding: 0.15rem 0.3rem;
+}
+td[colspan="2"] input[type="text"],
+td[colspan="2"] input[type="email"],
+td[colspan="2"] input[type="tel"] {
+  width: 15rem;
+}
+.centro { text-align: center; padding-top: 1.8rem; }
+.boton-enviar {
+  width: 9rem;
+  font-size: 1rem;
+  border: 2px solid #222;
+  border-radius: 1rem;
+  background-color: #e6d9b8;
+  cursor: pointer;
+}
+
+aside {
+  width: 40%;
+}
+aside img {
+  display: block;
+  margin: 0 auto 2rem;
+  width: 11rem;
+}
+aside p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.05rem;
+  text-align: justify;
+  margin: 0;
+}
+fieldset {
+  width: 14rem;
+  margin: 2rem 0 0 3rem;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 0.3rem 0.8rem 0.9rem;
+}
+fieldset legend { color: #000; }
+fieldset select { width: auto; font-size: 0.9rem; align-self: flex-start; }
+.boton-solicitar {
+  align-self: center;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+/* Pie */
+footer {
+  background: url("cabecera_navidad.jpg") no-repeat center top / cover;
+  color: #fff;
+  text-align: center;
+  padding: 1.6rem 0;
+}
+
+.caixa{
+  margin-left: 190px;
+}

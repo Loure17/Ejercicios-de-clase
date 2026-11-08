@@ -44,8 +44,8 @@ body {
 }
 
 input {
-    width: 180px;
-    height: 35px;
+    width: 190px;
+    height: 32px;
     font-size: medium;
 }
 
@@ -73,7 +73,7 @@ form {
     color: white;
 }
 
-#contrasenia{
+#contrasenia {
     color: #2b4e84;
     margin-left: 10px;
     margin-top: 15px;
@@ -81,6 +81,30 @@ form {
     text-decoration: none;
 }
 
-#contrasenia:hover{
+#contrasenia:hover {
     text-decoration: underline;
+}
+
+.card-footer {
+    margin-top: 50px;
+}
+
+.cookies {
+    margin-left: 50px;
+    background-color: #b1bbc4;
+}
+
+button{
+    border-radius: 7px;
+    font-size: 17px;
+    padding: 10px  5px;
+}
+
+#acceder{
+    border-radius: 10px;
+    width: 120px;
+}
+
+select{
+    font-size: 15px;
 }

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="300">
+  <meta name="description"
+    content="Página de Navidad con ofertas y promociones exclusivas para nuestros clientes registrados.">
+  <meta name="keywords" content="navidad, ofertas, promociones, comercios, newsletter">
+  <title>Feliz Navidad</title>
+  <link rel="icon" type="image/png" href="abeto.png">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Feliz Navidad</h1>
+  </header>
+
+  <nav>
+    <a href="https://www.colegiovivas.org" target="_blank">Comercios</a>
+    <a href="https://www.colegiovivas.org" target="_blank">Promociones</a>
+    <a href="https://www.colegiovivas.org" target="_blank">Fechas de apertura</a>
+    <a href="https://www.colegiovivas.org" target="_blank">Contacto</a>
+  </nav>
+
+  <main>
+    <section>
+      <form action="#" method="post">
+        <table>
+          <caption>Formulario de inscripción</caption>
+          <tr>
+            <td>
+              <label for="nombre">Nombre</label><br>
+              <input type="text" id="nombre" name="nombre" placeholder="Añadir nombre">
+            </td>
+            <td>
+              <label for="apellidos">Apellidos</label><br>
+              <input type="text" id="apellidos" name="apellidos" placeholder="Añadir apellidos">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label for="direccion">Dirección</label><br>
+              <input type="text" id="direccion" name="direccion" placeholder="Añadir dirección">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label for="correo">Correo</label><br>
+              <input type="email" id="correo" name="correo" placeholder="Añadir correo" required>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label for="telefono">Teléfono</label><br>
+              <input type="tel" id="telefono" name="telefono" placeholder="Añadir teléfono" required>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              Sexo<br>
+              <label><input type="radio" name="sexo" value="hombre"> Hombre</label>
+              <label><input type="radio" name="sexo" value="mujer"> Mujer</label>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="centro">
+              <input type="submit" value="Enviar" class="boton-enviar">
+            </td>
+          </tr>
+        </table>
+      </form>
+    </section>
+
+    <aside>
+      <img src="foto_navidad.png" alt="Feliz Navidad">
+      <p>Accede a todas nuestras ofertas y promociones registrándote de forma gratuita en nuestra página web. Recibirás
+        al instante todas las novedades de nuestro catálogo de productos.</p>
+      <form action="#" method="post">
+        <fieldset class="caixa">
+          <legend>Newsletter</legend>
+          <select name="frecuencia">
+            <option>Diariamente</option>
+            <option>Semanalmente</option>
+            <option>Mensualmente</option>
+          </select>
+          <label class="acepto">
+            <input type="checkbox" name="acepto" checked> Acepto recibir newsletters
+          </label>
+          <input type="submit" value="solicitar" class="boton-solicitar">
+        </fieldset>
+      </form>
+    </aside>
+  </main>
+
+  <footer>
+  </footer>
+
+</body>
+
+</html>
